@@ -1,0 +1,10 @@
+# Build #
+build/
+out/
+.gradle/
+
+# IntelliJ #
+.idea
+
+# Various #
+IgnoreMe*
