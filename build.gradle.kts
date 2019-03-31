@@ -9,7 +9,7 @@ plugins {
 val ktorVersion = "1.1.3"
 
 group = "com.thelgis"
-version = "1.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
 
 repositories {
   mavenCentral()

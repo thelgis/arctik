@@ -5,8 +5,9 @@ data class DruidRequestPayload(
   val queryType: String,
   val threshold: Int,
   val granularity: String,
-  val filter: FilterPayload,
-  val dimension: String,
+  val filter: FilterPayload? = null,
+  val dimension: String?,          // used in topN
+  val dimensions: List<String>?,   // used in groupBy
   val context: ContextPayload,
   val intervals: List<String>,
   val metric: MetricPayload,
@@ -15,17 +16,14 @@ data class DruidRequestPayload(
 
 data class FilterPayload(
   val type: String,
-  val fields: List<FieldPayload>
-)
-
-data class FieldPayload(
-  val type: String,
-  val dimension: String,
-  val value: String
+  val fields: List<FilterPayload>? = null,
+  val field: FilterPayload? = null,
+  val dimension: String? = null,
+  val value: String? = null
 )
 
 data class ContextPayload(
-  val timeout: Int,
+  val timeout: Long,
   val queryId: String? = null
 )
 
@@ -36,5 +34,7 @@ data class MetricPayload(
 data class AggregationPayload(
   val type: String,
   val name: String,
-  val fieldName: String
+  val fieldName: String,
+  val isInputHyperUnique: Boolean?,
+  val round: Boolean?
 )
