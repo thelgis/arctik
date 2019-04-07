@@ -52,6 +52,7 @@ fun WhereOperation.toFilterPayload(): FilterPayload =
         fields = listOf(left.toFilterPayload(), right.toFilterPayload())
       )
     is DimensionOperation -> this.toFilterPayload()
+    is InOperation -> this.toFilterPayload()
   }
 
 
@@ -89,14 +90,28 @@ fun DimensionOperation.toFilterPayload() =
       )
   }
 
-  fun Aggregator.toAggregationPayload() =
-    AggregationPayload(
-      type = this.type,
-      name = this.alias,
-      fieldName = this.field,
-      isInputHyperUnique = this.isInputHyperUnique,
-      round = this.round
+fun InOperation.toFilterPayload(): FilterPayload {
+  val filterPayload = FilterPayload(
+    type = "in",
+    dimension = dimension,
+    values = values
+  )
+  return if (isNegation) {
+    FilterPayload(
+      type = "not",
+      field = filterPayload
     )
+  } else filterPayload
+}
+
+fun Aggregator.toAggregationPayload() =
+  AggregationPayload(
+    type = this.type,
+    name = this.alias,
+    fieldName = this.field,
+    isInputHyperUnique = this.isInputHyperUnique,
+    round = this.round
+  )
 
 
 

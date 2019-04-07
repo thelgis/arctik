@@ -27,4 +27,10 @@ class WhereBuilder {
   val String.isNotNull
     get() = DimensionOperation(this, DimensionOperator.NOT_NULL)
 
+  /** Druid 'in' operator */
+  fun String.among(vararg values: String) = InOperation(this, values.toList())
+
+  /** Negation of Druid 'in' operator */
+  fun String.notAmong(vararg values: String) = InOperation(this, values.toList(), isNegation = true)
+
 }

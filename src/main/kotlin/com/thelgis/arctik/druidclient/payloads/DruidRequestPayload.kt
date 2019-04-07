@@ -16,10 +16,11 @@ data class DruidRequestPayload(
 
 data class FilterPayload(
   val type: String,
-  val fields: List<FilterPayload>? = null,
   val field: FilterPayload? = null,
+  val fields: List<FilterPayload>? = null,
   val dimension: String? = null,
-  val value: String? = null
+  val value: String? = null,
+  val values: List<String>? = null
 )
 
 data class ContextPayload(

@@ -156,6 +156,8 @@ To run unit tests: `./gradlew test`
     - Or
     - Null
     - NotNull
+    - In (renamed as 'among')
+    - NotIn (renamed as 'notAmong')
 - Aggregations
     - count 
     - doubleSum
@@ -174,7 +176,6 @@ To run unit tests: `./gradlew test`
 - Map response to data class  
 - Filters 
     - Bound
-    - In
     - Regex
     - Search 
 - Aggregations 

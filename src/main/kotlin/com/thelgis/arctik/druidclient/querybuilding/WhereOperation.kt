@@ -35,3 +35,9 @@ enum class DimensionOperator {
   NULL,
   NOT_NULL
 }
+
+class InOperation(
+  val dimension: String,
+  val values: List<String>,
+  val isNegation: Boolean = false
+): WhereOperation()
