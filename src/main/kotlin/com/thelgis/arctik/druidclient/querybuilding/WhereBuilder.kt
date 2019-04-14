@@ -10,22 +10,22 @@ class WhereBuilder {
     Or(this, other)
 
   infix fun String.eq(other: String) =
-    DimensionOperation(this, DimensionOperator.EQUAL, other)
+    SelectorOperation(this, SelectorOperator.EQUAL, other)
 
   infix fun String.eq(other: Int) =
-    DimensionOperation(this, DimensionOperator.EQUAL, other.toString())
+    SelectorOperation(this, SelectorOperator.EQUAL, other.toString())
 
   infix fun String.neq(other: String) =
-    DimensionOperation(this, DimensionOperator.NOT_EQUAL, other)
+    SelectorOperation(this, SelectorOperator.NOT_EQUAL, other)
 
   infix fun String.neq(other: Int) =
-    DimensionOperation(this, DimensionOperator.NOT_EQUAL, other.toString())
+    SelectorOperation(this, SelectorOperator.NOT_EQUAL, other.toString())
 
   val String.isNull
-    get() = DimensionOperation(this, DimensionOperator.NULL)
+    get() = SelectorOperation(this, SelectorOperator.NULL)
 
   val String.isNotNull
-    get() = DimensionOperation(this, DimensionOperator.NOT_NULL)
+    get() = SelectorOperation(this, SelectorOperator.NOT_NULL)
 
   /** Druid 'in' operator */
   fun String.among(vararg values: String) = InOperation(this, values.toList())

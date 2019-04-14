@@ -23,13 +23,13 @@ enum class BooleanOperator {
   OR
 }
 
-class DimensionOperation(
+class SelectorOperation(
   val dimension: String,
-  val dimensionOperator: DimensionOperator,
+  val selectorOperator: SelectorOperator,
   val value: String? = null
 ): WhereOperation()
 
-enum class DimensionOperator {
+enum class SelectorOperator {
   EQUAL,
   NOT_EQUAL,
   NULL,

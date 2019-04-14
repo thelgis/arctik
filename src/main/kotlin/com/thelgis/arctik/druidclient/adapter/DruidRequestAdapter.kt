@@ -51,20 +51,20 @@ fun WhereOperation.toFilterPayload(): FilterPayload =
         type = "or",
         fields = listOf(left.toFilterPayload(), right.toFilterPayload())
       )
-    is DimensionOperation -> this.toFilterPayload()
+    is SelectorOperation -> this.toFilterPayload()
     is InOperation -> this.toFilterPayload()
   }
 
 
-fun DimensionOperation.toFilterPayload() =
-  when(dimensionOperator) {
-    DimensionOperator.NULL ->
+fun SelectorOperation.toFilterPayload() =
+  when(selectorOperator) {
+    SelectorOperator.NULL ->
       FilterPayload(
         dimension = dimension,
         value = null,
         type = "selector"
       )
-    DimensionOperator.NOT_NULL ->
+    SelectorOperator.NOT_NULL ->
       FilterPayload(
         type = "not",
         field = FilterPayload(
@@ -73,13 +73,13 @@ fun DimensionOperation.toFilterPayload() =
           type = "selector"
         )
       )
-    DimensionOperator.EQUAL ->
+    SelectorOperator.EQUAL ->
       FilterPayload(
         type = "selector",
         dimension = dimension,
         value = value
       )
-    DimensionOperator.NOT_EQUAL ->
+    SelectorOperator.NOT_EQUAL ->
       FilterPayload(
         type = "not",
         field = FilterPayload(
