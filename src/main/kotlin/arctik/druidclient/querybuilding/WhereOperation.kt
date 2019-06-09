@@ -1,4 +1,4 @@
-package com.thelgis.arctik.druidclient.querybuilding
+package arctik.druidclient.querybuilding
 
 sealed class WhereOperation
 

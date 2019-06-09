@@ -1,4 +1,4 @@
-package com.thelgis.arctik.druidclient.payloads
+package arctik.druidclient.payloads
 
 data class DruidRequestPayload(
   val dataSource: String,

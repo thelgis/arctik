@@ -1,8 +1,8 @@
-package com.thelgis.arctik.druidclient
+package arctik.druidclient
 
+import arctik.druidclient.adapter.toRequest
+import arctik.druidclient.querybuilding.QueryBuilder
 import com.google.gson.GsonBuilder
-import com.thelgis.arctik.druidclient.adapter.toRequest
-import com.thelgis.arctik.druidclient.querybuilding.QueryBuilder
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.features.json.GsonSerializer

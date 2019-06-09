@@ -1,4 +1,4 @@
-package com.thelgis.arctik.druidclient.error
+package arctik.druidclient.error
 
 object ErrorMessage {
 

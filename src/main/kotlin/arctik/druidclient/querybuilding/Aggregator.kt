@@ -1,4 +1,4 @@
-package com.thelgis.arctik.druidclient.querybuilding
+package arctik.druidclient.querybuilding
 
 data class Aggregator(
   val type: String,

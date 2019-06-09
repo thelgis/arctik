@@ -1,9 +1,9 @@
-package com.thelgis.arctik.druidclient.adapter
+package arctik.druidclient.adapter
 
-import com.thelgis.arctik.druidclient.error.DruidClientException
-import com.thelgis.arctik.druidclient.error.ErrorMessage
-import com.thelgis.arctik.druidclient.payloads.*
-import com.thelgis.arctik.druidclient.querybuilding.*
+import arctik.druidclient.error.DruidClientException
+import arctik.druidclient.error.ErrorMessage
+import arctik.druidclient.payloads.*
+import arctik.druidclient.querybuilding.*
 
 /*
  * The adapter contains all logic to go from the internal data model of the 'QueryBuilder' to a 'DruidRequestPayload'

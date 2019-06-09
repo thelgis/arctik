@@ -1,7 +1,7 @@
-package com.thelgis.arctik.druidclient.querybuilding
+package arctik.druidclient.querybuilding
 
-import com.thelgis.arctik.druidclient.error.DruidQueryException
-import com.thelgis.arctik.druidclient.error.ErrorMessage
+import arctik.druidclient.error.DruidQueryException
+import arctik.druidclient.error.ErrorMessage
 import kotlin.properties.Delegates
 
 @DruidDSLMarker
