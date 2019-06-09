@@ -23,7 +23,7 @@ enum class BooleanOperator {
   OR
 }
 
-class SelectorOperation(
+data class SelectorOperation(
   val dimension: String,
   val selectorOperator: SelectorOperator,
   val value: String? = null
@@ -36,7 +36,31 @@ enum class SelectorOperator {
   NOT_NULL
 }
 
-class InOperation(
+data class BoundOperation(
+  val dimension: String,
+  val lowerBound: Bound? = null,
+  val upperBound: Bound? = null,
+  val ordering: Ordering = Ordering.LEXICOGRAPHIC
+): WhereOperation()
+
+infix fun BoundOperation.withOrdering(ordering: Ordering) =
+  this.copy(ordering = ordering)
+
+data class Bound(
+  val value: String,
+  val strict: Boolean = false
+  // TODO Extraction Function
+)
+
+enum class Ordering {
+  LEXICOGRAPHIC,
+  ALHANUMERIC,
+  NUMERIC,
+  STRLEN,
+  VERSION
+}
+
+data class InOperation(
   val dimension: String,
   val values: List<String>,
   val isNegation: Boolean = false

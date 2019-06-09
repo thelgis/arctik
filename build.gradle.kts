@@ -1,12 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  val kotlinVersion = "1.3.21"
+  val kotlinVersion = "1.3.30" // TODO there is 1.3.31
 
   kotlin("jvm") version kotlinVersion
 }
 
-val ktorVersion = "1.1.3"
+val ktorVersion = "1.1.3" // TODO there is 1.2.1 https://ktor.io/quickstart/migration/1.2.0.html
 
 group = "com.thelgis"
 version = "0.0.1-SNAPSHOT"

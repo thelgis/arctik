@@ -20,7 +20,12 @@ data class FilterPayload(
   val fields: List<FilterPayload>? = null,
   val dimension: String? = null,
   val value: String? = null,
-  val values: List<String>? = null
+  val values: List<String>? = null,
+  val lower: String? = null,
+  val upper: String? = null,
+  val lowerStrict: Boolean? = null,
+  val upperStrict: Boolean? = null,
+  val ordering: String? = null
 )
 
 data class ContextPayload(

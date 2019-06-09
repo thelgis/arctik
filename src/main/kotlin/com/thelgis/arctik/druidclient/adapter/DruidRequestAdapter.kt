@@ -53,6 +53,7 @@ fun WhereOperation.toFilterPayload(): FilterPayload =
       )
     is SelectorOperation -> this.toFilterPayload()
     is InOperation -> this.toFilterPayload()
+    is BoundOperation -> this.toFilterPayload()
   }
 
 
@@ -96,6 +97,7 @@ fun InOperation.toFilterPayload(): FilterPayload {
     dimension = dimension,
     values = values
   )
+
   return if (isNegation) {
     FilterPayload(
       type = "not",
@@ -103,6 +105,17 @@ fun InOperation.toFilterPayload(): FilterPayload {
     )
   } else filterPayload
 }
+
+fun BoundOperation.toFilterPayload() =
+  FilterPayload(
+    type = "bound",
+    dimension = dimension,
+    ordering = ordering.toString().toLowerCase(),
+    lowerStrict = lowerBound?.strict,
+    upperStrict = upperBound?.strict,
+    lower = lowerBound?.value,
+    upper = upperBound?.value
+  )
 
 fun Aggregator.toAggregationPayload() =
   AggregationPayload(
@@ -112,6 +125,3 @@ fun Aggregator.toAggregationPayload() =
     isInputHyperUnique = this.isInputHyperUnique,
     round = this.round
   )
-
-
-
