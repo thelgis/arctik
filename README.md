@@ -142,7 +142,7 @@ To build the project: `./gradlew build`
 
 To run unit tests: `./gradlew test`
 
-# Supported / not-supported features
+# Supported features
 
 ## Supported: 
 - Queries
@@ -169,6 +169,7 @@ To run unit tests: `./gradlew test`
     - doubleMax 
     - floatMin 
     - floatMax 
+    - first/last
     - hyperUnique 
 - Simple Granularity 
     - Simple (all)
@@ -180,7 +181,6 @@ To run unit tests: `./gradlew test`
     - Regex
     - Search 
 - Aggregations 
-    - first/last
     - cardinality 
     - filtered
 - Post Aggregations

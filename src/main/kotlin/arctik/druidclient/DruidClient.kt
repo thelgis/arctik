@@ -11,6 +11,7 @@ import io.ktor.client.request.post
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 
+// TODO Add instructions in READ-ME about sequential and parallel requests https://ktor.io/clients/http-client.html
 class DruidClient(
   private val host: String,
   private val port: String,
@@ -53,3 +54,6 @@ class DruidClient(
 
 
 }
+
+// TODO (serialization changes)
+//inline fun <reified T> String.to() = GsonBuilder().create().fromJson(this, T::class.java)

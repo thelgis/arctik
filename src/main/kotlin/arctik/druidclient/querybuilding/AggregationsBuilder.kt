@@ -20,15 +20,16 @@ class AggregationsBuilder {
   fun floatMin(field: String) = aggregations.add(Aggregator("floatMin", field))
   fun floatMax(field: String) = aggregations.add(Aggregator("floatMax", field))
 
-  // TODO first aggregators (need more arguments)
-//  fun longFirst(field: String) = aggregations.add(Aggregator("longFirst", field))
-//  fun longLast(field: String) = aggregations.add(Aggregator("longLast", field))
-//  fun doubleFirst(field: String) = aggregations.add(Aggregator("doubleFirst", field))
-//  fun doubleLast(field: String) = aggregations.add(Aggregator("doubleLast", field))
-//  fun floatFirst(field: String) = aggregations.add(Aggregator("floatFirst", field))
-//  fun floatLast(field: String) = aggregations.add(Aggregator("floatLast", field))
-//  fun stringFirst(field: String) = aggregations.add(Aggregator("stringFirst", field))
-//  fun stringLast(field: String) = aggregations.add(Aggregator("stringLast", field))
+  fun longFirst(field: String) = aggregations.add(Aggregator("longFirst", field))
+  fun longLast(field: String) = aggregations.add(Aggregator("longLast", field))
+  fun doubleFirst(field: String) = aggregations.add(Aggregator("doubleFirst", field))
+  fun doubleLast(field: String) = aggregations.add(Aggregator("doubleLast", field))
+  fun floatFirst(field: String) = aggregations.add(Aggregator("floatFirst", field))
+  fun floatLast(field: String) = aggregations.add(Aggregator("floatLast", field))
+  fun stringFirst(field: String, maxStringBytes: Int = 1024, filterNullValues: Boolean = false) =
+    aggregations.add(Aggregator("stringFirst", field))
+  fun stringLast(field: String, maxStringBytes: Int = 1024, filterNullValues: Boolean = false) =
+    aggregations.add(Aggregator("stringLast", field))
 
   // TODO Cardinality Aggregators
   // TODO Filtered Aggregator

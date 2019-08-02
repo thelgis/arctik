@@ -42,5 +42,7 @@ data class AggregationPayload(
   val name: String,
   val fieldName: String,
   val isInputHyperUnique: Boolean?,
-  val round: Boolean?
+  val round: Boolean?,
+  val maxStringBytes: Int?,
+  val filterNullValues: Boolean?
 )

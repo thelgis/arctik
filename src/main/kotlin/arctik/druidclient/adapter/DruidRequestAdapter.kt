@@ -123,5 +123,7 @@ fun Aggregator.toAggregationPayload() =
     name = this.alias,
     fieldName = this.field,
     isInputHyperUnique = this.isInputHyperUnique,
-    round = this.round
+    round = this.round,
+    maxStringBytes = this.maxStringBytes,
+    filterNullValues = this.filterNullValues
   )
