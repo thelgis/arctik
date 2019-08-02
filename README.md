@@ -160,17 +160,11 @@ To run unit tests: `./gradlew test`
     - NotIn (renamed as 'notAmong')
     - Bound
 - Aggregations
-    - count 
-    - doubleSum
-    - floatSum 
-    - longMin 
-    - longMax 
-    - doubleMin 
-    - doubleMax 
-    - floatMin 
-    - floatMax 
-    - first/last
-    - hyperUnique 
+    - Count 
+    - Sum  
+    - Min / Max 
+    - First / Last
+    - HyperUnique 
 - Simple Granularity 
     - Simple (all)
 
@@ -181,8 +175,8 @@ To run unit tests: `./gradlew test`
     - Regex
     - Search 
 - Aggregations 
-    - cardinality 
-    - filtered
+    - Cardinality 
+    - Filtered
 - Post Aggregations
 - Granularity 
     - Simple (none, second, minute, fifteen_minute, thirty_minute, hour, day, week, month, quarter and year)
